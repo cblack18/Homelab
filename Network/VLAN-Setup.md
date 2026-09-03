@@ -29,19 +29,19 @@ To simplify firewall rule creation and ensure strict isolation, an alias is defi
 ### Floating Firewall Rules
 Traffic routing and isolation are handled via OPNsense floating rules applied across the interfaces.
 
-|  Action   | Protocol     | Source             | Destination     | Destination Port | Description                                           |
-| :-------: | :----------- | :----------------- | :-------------- | :--------------- | :---------------------------------------------------- |
-| **Pass**  | IPv4 *       | `192.168.20.10/32` | MGMT network    | *                | Allow Workstation IP access to MGMT subnet            |
-| **Pass**  | IPv4 TCP/UDP | TRUSTED network    | TRUSTED address | 53 (DNS)         | Allow TRUSTED DNS access to router                    |
-| **Pass**  | IPv4 *       | TRUSTED network    | `! RFC1918`     | *                | Allow TRUSTED Internet access, block private networks |
-| **Pass**  | IPv4 TCP/UDP | DMZ network        | DMZ address     | 53 (DNS)         | Allow DMZ DNS access to router                        |
-| **Block** | IPv4 *       | DMZ network        | `RFC1918`       | *                | Block DMZ access to internal subnets                  |
-| **Pass**  | IPv4 *       | DMZ network        | *               | *                | Allow DMZ outbound Internet                           |
-| **Pass**  | IPv4 TCP/UDP | GUEST network      | GUEST address   | 53 (DNS)         | Allow GUEST DNS access to router                      |
-| **Block** | IPv4 *       | GUEST network      | `RFC1918`       | *                | Block GUEST access to internal subnets                |
-| **Pass**  | IPv4 *       | GUEST network      | *               | *                | Allow GUEST outbound internet access                  |
-| **Pass**  | IPv4 *       | MGMT network       | *               | *                | Allow MGMT access to all networks and internet        |
-| **Pass**  | IPv4 TCP     | MGMT network       | This Firewall   | 443 (HTTPS)      | Allow MGMT to access firewall web UI                  |
+|  Action   | Protocol     | Source             | Destination   | Destination Port | Description                                           |
+| :-------: | :----------- | :----------------- | :------------ | :--------------- | :---------------------------------------------------- |
+| **Pass**  | IPv4 *       | `192.168.20.10/32` | MGMT network  | *                | Allow Workstation IP access to MGMT subnet            |
+| **Pass**  | IPv4 TCP/UDP | TRUSTED network    | MGMT network  | 53 (DNS)         | Allow TRUSTED DNS access to MGMT                      |
+| **Pass**  | IPv4 *       | TRUSTED network    | `! RFC1918`   | *                | Allow TRUSTED Internet access, block private networks |
+| **Pass**  | IPv4 TCP/UDP | DMZ network        | DMZ address   | 53 (DNS)         | Allow DMZ DNS access to router                        |
+| **Block** | IPv4 *       | DMZ network        | `RFC1918`     | *                | Block DMZ access to internal subnets                  |
+| **Pass**  | IPv4 *       | DMZ network        | *             | *                | Allow DMZ outbound Internet                           |
+| **Pass**  | IPv4 TCP/UDP | GUEST network      | GUEST address | 53 (DNS)         | Allow GUEST DNS access to router                      |
+| **Block** | IPv4 *       | GUEST network      | `RFC1918`     | *                | Block GUEST access to internal subnets                |
+| **Pass**  | IPv4 *       | GUEST network      | *             | *                | Allow GUEST outbound internet access                  |
+| **Pass**  | IPv4 *       | MGMT network       | *             | *                | Allow MGMT access to all networks and internet        |
+| **Pass**  | IPv4 TCP     | MGMT network       | This Firewall | 443 (HTTPS)      | Allow MGMT to access firewall web UI                  |
 
 ---
 

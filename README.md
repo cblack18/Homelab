@@ -10,7 +10,7 @@ Welcome to my homelab documentation. This repository tracks the physical infrast
 
 * [Physical Build & Cabling](Hardware/Rack-Build.md)
 * [OPNsense Router Setup](Network/OPNsense-Setup.md)
-* [Proxmox Virtualization Cluster](Hypervisors/Proxmox-Nodes.md)
+* [Proxmox Virtualization Cluster](Proxmox-Overview.md)
 
 ## Hardware Inventory
 
