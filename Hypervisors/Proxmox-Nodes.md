@@ -8,11 +8,11 @@ This document details the configuration, hardware specifications, network bridge
 
 The cluster consists of two compact micro nodes (`PVE 01`, `PVE 02`) housed within the DeskPi 8U rack, paired with a Micro-ATX tower (`PVE 03`) for more resource-intensive workloads.
 
-| Hostname     | Node Role                   | Hardware / Form Factor   | CPU / RAM           | Primary Storage        | Management IP |
-| :----------- | :-------------------------- | :----------------------- | :------------------ | :--------------------- | :------------ |
-| **`pve-01`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 8GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.4` |
-| **`pve-02`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 8GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.5` |
-| **`pve-03`** | High-Compute / Storage Host | Micro-ATX Tower          | i7-8700 / 16GB DDR4 | 256GB NVMe + 1TB HDD   | `192.168.1.6` |
+| Hostname     | Node Role                   | Hardware / Form Factor   | CPU / RAM            | Primary Storage        | Management IP |
+| :----------- | :-------------------------- | :----------------------- | :------------------- | :--------------------- | :------------ |
+| **`pve-01`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.4` |
+| **`pve-02`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.5` |
+| **`pve-03`** | High-Compute / Storage Host | Micro-ATX Tower          | i7-8700 / 16GB DDR4  | 256GB NVMe + 1TB HDD   | `192.168.1.6` |
 
 <img src="../Images/Proxmox/Proxmox-Datacenter-Summary.png" width="100%" />
 
