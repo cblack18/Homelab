@@ -8,11 +8,11 @@ This document details the configuration, hardware specifications, network bridge
 
 The cluster consists of two compact micro nodes (`PVE 01`, `PVE 02`) housed within the DeskPi 8U rack, paired with a Micro-ATX tower (`PVE 03`) for more resource-intensive workloads.
 
-| Hostname     | Node Role                   | Hardware / Form Factor   | CPU / RAM            | Primary Storage        | Management IP |
-| :----------- | :-------------------------- | :----------------------- | :------------------- | :--------------------- | :------------ |
-| **`pve-01`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.4` |
-| **`pve-02`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.1.5` |
-| **`pve-03`** | High-Compute / Storage Host | Micro-ATX Tower          | i7-8700 / 16GB DDR4  | 256GB NVMe + 1TB HDD   | `192.168.1.6` |
+| Hostname     | Node Role                   | Hardware / Form Factor   | CPU / RAM            | Primary Storage        | Management IP   |
+| :----------- | :-------------------------- | :----------------------- | :------------------- | :--------------------- | :-------------- |
+| **`pve-01`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.10.10` |
+| **`pve-02`** | Compute / Cluster Member    | Dell OptiPlex 3060 Micro | i5-8500T / 24GB DDR4 | 256GB NVMe + 500GB SSD | `192.168.10.11` |
+| **`pve-03`** | High-Compute / Storage Host | Micro-ATX Tower          | i7-8700 / 16GB DDR4  | 256GB NVMe + 1TB HDD   | `192.168.10.12` |
 
 <img src="../Images/Proxmox/Proxmox-Datacenter-Summary.png" width="100%" />
 
@@ -24,14 +24,14 @@ Each node uses a standard Proxmox Linux Bridge (`vmbr0`) mapped to the host's pr
 
 All three nodes follow a standardized bridge setup on their primary GbE interfaces:
 
-| Node         | Interface | Type         | IP Address       | Gateway       | Subnet Mask     | Associated Bridge |
-| :----------- | :-------- | :----------- | :--------------- | :------------ | :-------------- | :---------------- |
-| **`pve-01`** | `nic0`    | Physical     | Default          | N/A           | N/A             | `vmbr0`           |
-|              | `vmbr0`   | Linux Bridge | `192.168.1.4/24` | `192.168.1.1` | `255.255.255.0` | Mapped to `nic0`  |
-| **`pve-02`** | `nic0`    | Physical     | Default          | N/A           | N/A             | `vmbr0`           |
-|              | `vmbr0`   | Linux Bridge | `192.168.1.5/24` | `192.168.1.1` | `255.255.255.0` | Mapped to `nic0`  |
-| **`pve-03`** | `nic0`    | Physical     | Default          | N/A           | N/A             | `vmbr0`           |
-|              | `vmbr0`   | Linux Bridge | `192.168.1.6/24` | `192.168.1.1` | `255.255.255.0` | Mapped to `nic0`  |
+| Node         | Interface | Type         | IP Address         | Gateway        | Subnet Mask     | Associated Bridge |
+| :----------- | :-------- | :----------- | :----------------- | :------------- | :-------------- | :---------------- |
+| **`pve-01`** | `nic0`    | Physical     | Default            | N/A            | N/A             | `vmbr0`           |
+|              | `vmbr0`   | Linux Bridge | `192.168.10.10/24` | `192.168.10.1` | `255.255.255.0` | Mapped to `nic0`  |
+| **`pve-02`** | `nic0`    | Physical     | Default            | N/A            | N/A             | `vmbr0`           |
+|              | `vmbr0`   | Linux Bridge | `192.168.10.11/24` | `192.168.10.1` | `255.255.255.0` | Mapped to `nic0`  |
+| **`pve-03`** | `nic0`    | Physical     | Default            | N/A            | N/A             | `vmbr0`           |
+|              | `vmbr0`   | Linux Bridge | `192.168.10.12/24` | `192.168.10.1` | `255.255.255.0` | Mapped to `nic0`  |
 
 ---
 

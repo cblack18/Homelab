@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Hypervisors/Proxmox-Nodes.md",
+                "file": "Hardware/Rack-Build.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Proxmox-Nodes"
+              "title": "Rack-Build"
             }
           }
         ]
@@ -190,12 +190,12 @@
   },
   "active": "f9bdafabeda05923",
   "lastOpenFiles": [
+    "Hypervisors/Proxmox-Nodes.md",
+    "Network/VLAN-Setup.md",
+    "Network/OPNsense-Setup.md",
+    "Images/Proxmox/Proxmox-Datacenter-Summary.png",
     "New Text Document.txt",
     "Untitled.md",
-    "Hypervisors/Proxmox-Nodes.md",
-    "Images/Proxmox/Proxmox-Datacenter-Summary.png",
-    "Images/Proxmox/Proxmox-Datacenter-Summary.png",
-    "Network/OPNsense-Setup.md",
     "Hardware/Rack-Build.md",
     "Images/Network/OPNsense-Dashboard.png"
   ]

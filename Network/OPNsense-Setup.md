@@ -41,7 +41,6 @@ With the Intel I350-T2 installed, interface roles were designated as follows:
 4. **Stateful Perimeter Security:** OPNsense acts as the stateful firewall for the homelab. Using its out-of-the-box default rule base, it automatically blocks all unsolicited inbound connections from the upstream `10.0.0.0/24` network into the lab, while allowing lab devices on `igb0` outbound access.
 ### Core Services Configured
 * **Default Gateway:** OPNsense serves as the default gateway for all internal subnets.
-* **DHCP Server:** Configured on `igb0` to issue dynamic leases to hypervisors and infrastructure.
 * **DNS Resolution:** Unbound DNS service running on default settings for outbound caching and recursive resolution.
 
 <img src="../Images/Network/OPNsense-Dashboard.png" width="100%" />

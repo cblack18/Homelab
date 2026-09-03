@@ -32,16 +32,16 @@ Cabling from Switch Ports 1–8 routes 1:1 into Patch Panel Ports 3–10 using 6
 
 **Note:** The upstream ISP WAN link from the Xfinity Gateway bypasses the patch panel entirely and plugs directly into the onboard OPNsense Ethernet port (`em0`).
 
-| Switch Port | Patch Port | PoE | Connected Host / Device       | Target Interface    | Function            |
-| :---------: | :--------: | :-: | :---------------------------- | :------------------ | :------------------ |
-| **Port 1**  |   Port 3   | No  | OPNsense Router               | `igb0` (LAN Port 1) | Core Router         |
-| **Port 2**  |   Port 4   | Yes | TP-Link Omada EAP650          | Onboard GbE         | Wireless AP         |
-| **Port 3**  |   Port 5   | No  | Lenovo M60e Tiny              | Onboard GbE         | TBD                 |
-| **Port 4**  |   Port 6   | No  | Dell OptiPlex 3060 (`PVE 01`) | Onboard GbE         | Proxmox Node 01     |
-| **Port 5**  |   Port 7   | No  | Dell OptiPlex 3060 (`PVE 02`) | Onboard GbE         | Proxmox Node 02     |
-| **Port 6**  |   Port 8   | No  | Micro-ATX Tower (`PVE 03`)    | Onboard GbE         | Proxmox Node 03     |
-| **Port 7**  |   Port 9   | No  | *Spare*                       | -                   | -                   |
-| **Port 8**  |  Port 10   | No  | Primary Workstation           | Onboard GbE         | Primary Workstation |
+| Switch Port | Patch Port | PoE | Connected Host / Device       | Target Interface    | Function            | VLAN ID |
+| :---------: | :--------: | :-: | :---------------------------- | :------------------ | :------------------ | ------- |
+| **Port 1**  |   Port 3   | No  | OPNsense Router               | `igb0` (LAN Port 1) | Core Router         | 10      |
+| **Port 2**  |   Port 4   | Yes | TP-Link Omada EAP650          | Onboard GbE         | Wireless AP         | 10      |
+| **Port 3**  |   Port 5   | No  | Lenovo M60e Tiny              | Onboard GbE         | TBD                 | 10      |
+| **Port 4**  |   Port 6   | No  | Dell OptiPlex 3060 (`PVE 01`) | Onboard GbE         | Proxmox Node 01     | 10      |
+| **Port 5**  |   Port 7   | No  | Dell OptiPlex 3060 (`PVE 02`) | Onboard GbE         | Proxmox Node 02     | 10      |
+| **Port 6**  |   Port 8   | No  | Micro-ATX Tower (`PVE 03`)    | Onboard GbE         | Proxmox Node 03     | 10      |
+| **Port 7**  |   Port 9   | No  | *Spare*                       | -                   | -                   | 1       |
+| **Port 8**  |  Port 10   | No  | Primary Workstation           | Onboard GbE         | Primary Workstation | 20      |
 
 ---
 
